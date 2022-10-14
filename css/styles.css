@@ -1,0 +1,62 @@
+/*  Global selector to reset properties 
+    and create consistency across browsers.
+ */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #fff; /* Colour of logo */
+    font-family: 'Lato Light', sans-serif;
+    margin: 3rem 5% 3rem 5%;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+header > img {
+    display: block;     /* img default is 'inline-block'. Used to put it on its own line. */
+    margin: auto auto;  /* top and bottom = auto, left and right = auto. Centre image horizontally. */
+    width: 5rem;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;   /* Removes bullet point from ul */
+    text-align: center; /* Aligns ul text centrally within nav element */
+}
+
+nav li {
+    display: inline-block;  /* Displays each li element inline as a block. */
+}
+
+li a {
+    text-decoration: none;
+}
+
+section {
+    display: flex;
+}
+
+article {
+    flex: 1;    /* Evenly divides space between all article elements within flex element */
+}
+
+footer {
+    display: flex;
+}
+
+footer div {
+    flex: 1;
+}
+
+footer img {
+    width: 3rem;
+    height: auto;
+}
