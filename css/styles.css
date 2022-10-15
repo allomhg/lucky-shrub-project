@@ -1,15 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+/*  These variables for colours are probably temporary
+    only using for ease of use in testing.
+ */
+:root {
+    --off-white: #FAF9F6;
+    --dark-turq: #26877F;
+    --light-turq: #87D2B3; 
+    --sand: #F0E5A5;
+    --orange: #E9813C;
+    --burnt-orange: #AB442C;
+    --border-rad: 1rem;
+}
+
 /*  Global selector to reset properties 
     and create consistency across browsers.
  */
 * {
     margin: 0;
     padding: 0;
+    color: var(--burnt-orange);
 }
 
 body {
-    background-color: #fff; /* Colour of logo */
-    font-family: 'Lato Light', sans-serif;
-    margin: 3rem 5% 3rem 5%;
+    background-color: var(--off-white);
+    font-family: Quicksand, 'Lato Light', sans-serif;
+    margin: 2rem 5% 2rem 5%;
 }
 
 h1 {
@@ -22,18 +38,24 @@ h2 {
 
 header > img {
     display: block;     /* img default is 'inline-block'. Used to put it on its own line. */
-    margin: auto auto;  /* top and bottom = auto, left and right = auto. Centre image horizontally. */
-    width: 5rem;
+    margin: 0 auto 1.5rem;
+    width: 8vw;
     height: auto;
 }
 
 nav ul {
+    display: flex;
     list-style: none;   /* Removes bullet point from ul */
     text-align: center; /* Aligns ul text centrally within nav element */
+    background-color: var(--light-turq);
+    font-size: 1.5rem;
+    padding: 0.25rem;
+    border-radius: var(--border-rad);
 }
 
 nav li {
-    display: inline-block;  /* Displays each li element inline as a block. */
+   /* display: flex;  /* Displays each li element inline as a block. Was INLINE-BLOCK*/ 
+    flex: 1;
 }
 
 li a {
@@ -42,10 +64,22 @@ li a {
 
 section {
     display: flex;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
 article {
     flex: 1;    /* Evenly divides space between all article elements within flex element */
+    padding: 0.5rem;
+    border-radius: var(--border-rad);
+}
+
+/* Images embedded in the article cards */
+article > img {
+    display: inline-block;
+    right: 10px;
+    width: 100px;
+    height: auto;
 }
 
 footer {
@@ -57,6 +91,16 @@ footer div {
 }
 
 footer img {
-    width: 3rem;
+    width: 2rem;
     height: auto;
+}
+
+/* Class selectors */
+
+.main-article {
+    background-color: var(--light-turq);
+}
+
+.sub-article {
+    background-color: var(--light-turq);
 }

@@ -25,10 +25,20 @@ The homepage needs to meet certain criteria regarding the following:
 
 This project is a peer-reviewed assignment, and will be evaluated by others participating in the course.
 
+## Client Persona
+ - Medium-sized garden design firm
+ - They do garden design and creation, maintenance and landscaping
+ - Small plant nursery with indoor and outdoor plants
+ - "transform any space into an oasis you can be proud of"
+
+
 ## Tools and Resources
 
 Tools and resources I used while working on this project.
-
+ - colormind.io     --- For colour palette ideas.
+ - pexels.com       --- For stock images.
+ - freefrontend.com --- For CSS styling ideas and effects.
+ - codepen.io       --- "                               "
 
 I began this project on 14/10/2022.
-I finsihed this project on ??????
+
