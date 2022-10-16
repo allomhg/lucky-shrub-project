@@ -35,8 +35,11 @@ h1 {
 
 h2 {
     font-size: 2rem;
-    /*background-color: #26877F;*/
-    border-bottom: 5px solid blue;
+
+}   
+
+a {
+    text-decoration: none;
 }
 
 /* Nav bar styling */
@@ -60,11 +63,17 @@ nav ul {
 
 nav li {
     flex: 1;
+    
 }
+
 
 li a {
     text-decoration: none;
+    /*
+    background-color: #26877F;
+    */
 }
+
 
 /** Section and article styling **/
 
@@ -77,6 +86,7 @@ section {
 article {
     flex: 1;    /* Evenly divides space between all article elements within flex element */
     border-radius: var(--border-rad);
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 article div {
@@ -86,6 +96,7 @@ article div {
 .sub-article div p {
     padding: 0.25rem 0.25rem 0.5rem 0.25rem ;
 }
+
 
 
 /* Images embedded in the article cards */
@@ -103,18 +114,27 @@ footer img {
     height: auto;
 }
 
+footer div p {
+    color: var(--dark-turq);
+}
+
 /* Class selectors */
 
 .main-article {
     background-color: var(--light-turq);
     display: flex;
     max-height: 50vh;
+    overflow: hidden;
 }
 
 .sub-article {
     background-color: var(--light-turq);
     min-width: 10vw;
+    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    transition: transform 0.5s;
 }
+
+
 
 article:nth-of-type(2) {
     margin-left: 1rem;
@@ -122,16 +142,25 @@ article:nth-of-type(2) {
 }
 
 .main-article img {
-    max-width: 100%;
-    max-height: fit-content;
-    height: fit-content
+    object-fit: cover;
     border-radius: var(--border-rad) 0 0 var(--border-rad);
+    text-decoration: dashed;
 }
 
 .sub-article img {
-    display: inline-block;
-    width: 100%;
-    border-radius: var(--border-rad) var(--border-rad) 0 0;
+    object-fit: cover;
     max-width: 100%;
-    max-height: 25ch;
+    width: 100%;
+    max-height: 10rem;
+    border-radius: var(--border-rad) var(--border-rad) 0 0;
+}
+
+/* Animations and effects */
+
+li a:hover {
+    background-color: #E9813C;
+}
+
+.sub-article:hover {
+    transform: scale(1.05);
 }
