@@ -11,6 +11,7 @@
     --orange: #E9813C;
     --burnt-orange: #AB442C;
     --border-rad: 1rem;
+    
 }
 
 /*  Global selector to reset properties 
@@ -19,7 +20,7 @@
 * {
     margin: 0;
     padding: 0;
-    color: var(--burnt-orange);
+    box-sizing: border-box;
 }
 
 body {
@@ -34,12 +35,16 @@ h1 {
 
 h2 {
     font-size: 2rem;
+    /*background-color: #26877F;*/
+    border-bottom: 5px solid blue;
 }
+
+/* Nav bar styling */
 
 header > img {
     display: block;     /* img default is 'inline-block'. Used to put it on its own line. */
     margin: 0 auto 1.5rem;
-    width: 8vw;
+    width: 6vw;
     height: auto;
 }
 
@@ -54,7 +59,6 @@ nav ul {
 }
 
 nav li {
-   /* display: flex;  /* Displays each li element inline as a block. Was INLINE-BLOCK*/ 
     flex: 1;
 }
 
@@ -62,25 +66,29 @@ li a {
     text-decoration: none;
 }
 
+/** Section and article styling **/
+
 section {
     display: flex;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 article {
     flex: 1;    /* Evenly divides space between all article elements within flex element */
-    padding: 0.5rem;
     border-radius: var(--border-rad);
 }
 
-/* Images embedded in the article cards */
-article > img {
-    display: inline-block;
-    right: 10px;
-    width: 100px;
-    height: auto;
+article div {
+    padding: 0.5rem;
 }
+
+.sub-article div p {
+    padding: 0.25rem 0.25rem 0.5rem 0.25rem ;
+}
+
+
+/* Images embedded in the article cards */
 
 footer {
     display: flex;
@@ -99,8 +107,31 @@ footer img {
 
 .main-article {
     background-color: var(--light-turq);
+    display: flex;
+    max-height: 50vh;
 }
 
 .sub-article {
     background-color: var(--light-turq);
+    min-width: 10vw;
+}
+
+article:nth-of-type(2) {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.main-article img {
+    max-width: 100%;
+    max-height: fit-content;
+    height: fit-content
+    border-radius: var(--border-rad) 0 0 var(--border-rad);
+}
+
+.sub-article img {
+    display: inline-block;
+    width: 100%;
+    border-radius: var(--border-rad) var(--border-rad) 0 0;
+    max-width: 100%;
+    max-height: 25ch;
 }
