@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
-/* NEED TO STACK CARDS VERTICALLY AT SMALLER SCREEN SIZES */
-
 :root {
     --off-white: hsl(45, 29%, 97%);
     --dark-turq: hsl(175, 56%, 34%);
@@ -176,41 +174,56 @@ footer div p {
     right: 5vw;
 }
 
+/*** media queries ***/
+
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+    h1 {font-size: 1.5rem;}
+    
+    h2 {font-size: 1rem;}
+    
+    p {font-size: 0.75rem;}
+    
+    li a:hover{padding: 0.25rem;}
+    
     nav ul {
-        font-size: 0.75rem;
+        font-size: 0.75rem; 
         padding:0.25rem;
     }
+    
+    section {flex-direction: column;}
+    
+    section a:nth-of-type(2) {margin: 0.5rem 0 0.5rem 0;}
+    
 
-    h1 {font-size: 1.5rem;}
-
-    h2 {font-size: 1rem;}
-
-    p {font-size: 0.75rem;}
-
+    
     .sub-article img {height: 10vh;}
-
-    li a:hover{padding: 0.25rem;}
-    section a:nth-of-type(2) {
-        margin-left: 0.25rem;
-        margin-right: 0.25rem;}
   }
 
   /* Small devices (portrait tablets and large phones, between 600px and 768px) */
 @media only screen and (min-width: 600px) and (max-width: 768px) {
-    nav ul {
-        font-size: 0.75rem;
-        padding:0.25rem;
-    }
-
     h1 {font-size: 1.75rem;}
 
     h2 {font-size: 1.25rem;}
 
-    p {font-size: 1rem;}
+    p {font-size: 0.9rem;}
+    
+    li a:hover{padding: 0.25rem;}
+    
+     nav ul {
+        font-size: 1rem;
+        padding:0.25rem;
+    }
+    
+    section {flex-direction: column;}
+    
+    section a:nth-of-type(2) {margin: 1rem 0 1rem 0;}
 
     .sub-article img {height: 15vh;}
+} 
 
-    li a:hover{padding: 0.25rem;};
+/* Medium devices (landscape tablets, between 768 and 992px) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    section {flex-direction: column;}
+    section a:nth-of-type(2) {margin: 1rem 0 1rem 0;}
 } 
