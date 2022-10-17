@@ -1,20 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
-/* 
-    I NEED TO ADD SOME MEDIA QUERIES TO MAKE THE WEBSITE MORE RESPONSIVE
-*/
-
-/*  
-These variables for colours are probably temporary
-only using for ease of use in testing.
- */
 :root {
     --off-white: hsl(45, 29%, 97%);
     --dark-turq: hsl(175, 56%, 34%);
     --med-turq:  hsl(155, 45%, 68%);
     --light-turq: hsl(155, 100%, 87%);
-    --border-rad: 1rem;
-}
+        --border-rad: 1rem;
+    }
 
 /*  
 Global selector to reset properties 
@@ -24,7 +16,7 @@ and create consistency across browsers.
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: hsl(175, 87%, 6%);
+    color: #111A16;
 }
 
 body {
@@ -43,6 +35,15 @@ h2 {
 
 a {
     text-decoration: none;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h1 + p {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
 }
 
 /*** header and nav content ***/
@@ -93,6 +94,7 @@ article {
     flex: 1;                                /* Evenly divides space between all article elements within flex element */
     border-radius: var(--border-rad);
     background-color: var(--light-turq);
+    background-image: linear-gradient(to bottom right, var(--light-turq), var(--light-turq), var(--light-turq), var(--med-turq)); /* SWITCH */
     box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
 }
 
@@ -109,21 +111,22 @@ article:nth-of-type(2) {
 
 .main-article {
     display: flex;
-    max-height: 50vh;
+    max-height: 60vh;
     overflow: hidden;  /* SWITCH - overflow */
 }
 
 .main-article img {
     object-fit: cover;
+    max-width: 35vw;
+    max-height: fit-content;
     border-radius: var(--border-rad) 0 0 var(--border-rad);
-    text-decoration: dashed;
 }
 
 /*** sub-article ***/
 
 .sub-article {
     min-width: 10vw;
-    width: clamp(20rem, calc(20rem + 2vw), 22rem); /* SWITCH - clamp */
+    /*width: clamp(20rem, calc(20rem + 2vw), 22rem);  SWITCH - clamp */
     transition: transform 0.5s;
 }
 
@@ -131,7 +134,7 @@ article:nth-of-type(2) {
     object-fit: cover;
     max-width: 100%;
     width: 100%;
-    max-height: 10rem;
+    height: 20ch;
     border-radius: var(--border-rad) var(--border-rad) 0 0;
 }
 
@@ -167,3 +170,25 @@ footer div p {
     position: absolute;
     right: 5vw;
 }
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    nav ul {font-size: 1rem;}
+    h1 {font-size: 1.5rem;}
+    h2 {font-size: 1rem;}
+    p {font-size: 0.75rem;}
+    nav ul{padding:0.25rem}
+    .sub-article img {height: 10ch;}
+    li a:hover{padding: 0.25rem;};
+  }
+
+  /* Small devices (portrait tablets and large phones, between 600px and 768px) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    nav ul {font-size: 1.25rem;}
+    h1 {font-size: 1.75rem;}
+    h2 {font-size: 1.25rem;}
+    p {font-size: 1rem;}
+    nav ul{padding: 0.25rem}
+    .sub-article img {height: 15ch;}
+    li a:hover{padding: 0.25rem;};
+} 
