@@ -1,26 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
-/*  These variables for colours are probably temporary
-    only using for ease of use in testing.
+/* 
+    I NEED TO ADD SOME MEDIA QUERIES TO MAKE THE WEBSITE MORE RESPONSIVE
+*/
+
+/*  
+These variables for colours are probably temporary
+only using for ease of use in testing.
  */
 :root {
-    --off-white: #FAF9F6;
-    --dark-turq: #26877F;
-    --light-turq: #87D2B3; 
-    --sand: #F0E5A5;
-    --orange: #E9813C;
-    --burnt-orange: #AB442C;
+    --off-white: hsl(45, 29%, 97%);
+    --dark-turq: hsl(175, 56%, 34%);
+    --med-turq:  hsl(155, 45%, 68%);
+    --light-turq: hsl(155, 100%, 87%);
     --border-rad: 1rem;
-    
 }
 
-/*  Global selector to reset properties 
-    and create consistency across browsers.
+/*  
+Global selector to reset properties 
+and create consistency across browsers.
  */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: hsl(175, 87%, 6%);
 }
 
 body {
@@ -35,47 +39,49 @@ h1 {
 
 h2 {
     font-size: 2rem;
-
 }   
 
 a {
     text-decoration: none;
 }
 
-/* Nav bar styling */
+/*** header and nav content ***/
 
 header > img {
-    display: block;     /* img default is 'inline-block'. Used to put it on its own line. */
-    margin: 0 auto 1.5rem;
+    display: block;             /* img default is 'inline-block'. Used to put it on its own line. */
+    margin: 0 auto 1.5rem;      /* top = 0, left and right = auto, bottom = 1.5rem */
     width: 6vw;
     height: auto;
 }
 
 nav ul {
     display: flex;
-    list-style: none;   /* Removes bullet point from ul */
-    text-align: center; /* Aligns ul text centrally within nav element */
+    list-style: none;         
+    text-align: center;        
     background-color: var(--light-turq);
     font-size: 1.5rem;
-    padding: 0.25rem;
+    padding: 0.5rem;
     border-radius: var(--border-rad);
 }
 
 nav li {
     flex: 1;
-    
 }
-
 
 li a {
     text-decoration: none;
-    /*
-    background-color: #26877F;
-    */
+    transition: ease;
 }
 
+li a:hover {
+    transition-duration: 0.5s;
+    background-color: var(--dark-turq);
+    padding: 0.5rem;
+    border-radius: var(--border-rad);
+    color: var(--off-white);
+}
 
-/** Section and article styling **/
+/*** section and article content ***/
 
 section {
     display: flex;
@@ -84,8 +90,9 @@ section {
 }
 
 article {
-    flex: 1;    /* Evenly divides space between all article elements within flex element */
+    flex: 1;                                /* Evenly divides space between all article elements within flex element */
     border-radius: var(--border-rad);
+    background-color: var(--light-turq);
     box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
 }
 
@@ -93,16 +100,16 @@ article div {
     padding: 0.5rem;
 }
 
-.sub-article div p {
-    padding: 0.25rem 0.25rem 0.5rem 0.25rem ;
+article:nth-of-type(2) {
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 
-
-
-/* Images embedded in the article cards */
+/*** footer content ***/
 
 footer {
     display: flex;
+    align-items: end; /* SWITCH - flex alignment */
 }
 
 footer div {
@@ -118,27 +125,33 @@ footer div p {
     color: var(--dark-turq);
 }
 
-/* Class selectors */
-
-.main-article {
-    background-color: var(--light-turq);
-    display: flex;
-    max-height: 50vh;
-    overflow: hidden;
+.copyright {
+    position: absolute;
+    right: 5vw;
 }
 
+/*** main-article ***/
+
+.main-article {
+    display: flex;
+    max-height: 50vh;
+    overflow: hidden;  /* SWITCH - overflow */
+}
+
+/*** sub-article ***/
+
 .sub-article {
-    background-color: var(--light-turq);
     min-width: 10vw;
-    width: clamp(20rem, calc(20rem + 2vw), 22rem);
+    width: clamp(20rem, calc(20rem + 2vw), 22rem); /* SWITCH - clamp */
     transition: transform 0.5s;
 }
 
+.sub-article div p {
+    padding: 0.25rem 0.25rem 0.5rem 0.25rem ;
+}
 
-
-article:nth-of-type(2) {
-    margin-left: 1rem;
-    margin-right: 1rem;
+.sub-article:hover {
+    transform: scale(1.025);
 }
 
 .main-article img {
@@ -153,14 +166,4 @@ article:nth-of-type(2) {
     width: 100%;
     max-height: 10rem;
     border-radius: var(--border-rad) var(--border-rad) 0 0;
-}
-
-/* Animations and effects */
-
-li a:hover {
-    background-color: #E9813C;
-}
-
-.sub-article:hover {
-    transform: scale(1.05);
 }
